@@ -3,7 +3,7 @@
     <Appbar />
 
     <v-content>
-      <HelloWorld />
+      <router-view></router-view>
     </v-content>
 
     <AppFooter />
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+// import HelloWorld from "./components/HelloWorld";
 import Appbar from "./components/Appbar";
 import AppFooter from "./components/Footer";
 
@@ -19,7 +19,7 @@ export default {
   name: "App",
 
   components: {
-    HelloWorld,
+    // HelloWorld,
     Appbar,
     AppFooter
   },
