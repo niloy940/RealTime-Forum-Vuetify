@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
 import AppStorage from '../models/AppStorage';
+import Questions from '../models/Questions';
 
 Vue.use(Vuex);
 axios.defaults.baseURL = 'http://127.0.0.1:8000/api/';
@@ -9,11 +10,16 @@ axios.defaults.baseURL = 'http://127.0.0.1:8000/api/';
 export const store = new Vuex.Store({
     state: {
         token: AppStorage.getToken() || null,
+        questions: [],
     },
 
     getters:{
         loggedIn(state) {
             return state.token !== null;
+        },
+
+        getAllQuestions(state) {
+            return state.questions;
         }
     },
 
@@ -67,6 +73,10 @@ export const store = new Vuex.Store({
                 })
             }
         },
+
+        allQuestions(context) {
+            Questions.all(context, 'questions');
+        },
     },
 
     mutations:{
@@ -76,6 +86,10 @@ export const store = new Vuex.Store({
 
         destroyToken(state) {
             state.token = null;
+        },
+
+        questions(state, payload) {
+            state.questions = payload;
         }
     }
 })

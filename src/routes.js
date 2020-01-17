@@ -3,15 +3,22 @@ import Logout from './components/auth/Logout';
 import Register from './components/auth/Register';
 import HelloWorld from './components/HelloWorld';
 import AskQuestion from './components/question/AskQuestion';
+import Forum from './components/forum/Forum';
 
 const routes = [
     {
         path: '/',
         component: HelloWorld,
-        name: 'forum'
+        name: 'home'
         // meta: {
         //     requiresAuth: true,
         // }
+    },
+
+    {
+        path: '/forum',
+        component: Forum,
+        name: 'forum'
     },
 
     {

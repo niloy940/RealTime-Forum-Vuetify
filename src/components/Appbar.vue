@@ -16,7 +16,7 @@
 
       <v-spacer></v-spacer>
 
-      <router-link to="/">
+      <router-link to="/forum">
         <v-btn text>
           <span class="mr-2">FORUM</span>
           <!-- <v-icon>mdi-open-in-new</v-icon> -->
